@@ -1,7 +1,8 @@
-package book_n_play_replicate.com.book_n_play_replicate
+package book_n_play_replicate.com.book_n_play_replicate.controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import book_n_play_replicate.com.book_n_play_replicate.R
 
 class MainActivity : AppCompatActivity() {
 
