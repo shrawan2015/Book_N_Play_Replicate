@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/venueName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:text="Reboot Arena"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/venueType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Synthithic court"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/venueName" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/locationName"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:text="Wakad"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/verticalborderline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/venueType"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:id="@+id/locationDistance"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:background="@android:color/white"
+        android:text="4 km"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/locationName"
+        app:layout_constraintEnd_toStartOf="@+id/bookVenue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/verticalborderline"
+        style="?android:attr/borderlessButtonStyle"
+
+        app:layout_constraintTop_toTopOf="@+id/locationName" />
+
+    <Button
+        android:id="@+id/bookVenue"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:background="@color/colorAccent"
+        android:text="Book"
+        android:layout_marginStart="0dp"
+
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/locationDistance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/locationDistance"
+        app:layout_constraintTop_toTopOf="@+id/locationDistance" />
+
+    <View
+        android:id="@+id/borderLine3"
+        style="@style/LayoutDivider"
+        android:layout_height="10dp"
+
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationDistance" />
+
+    <TextView
+        android:id="@+id/verticalborderline"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/locationDistance"
+        app:layout_constraintTop_toBottomOf="@+id/venueType" />
+
+</android.support.constraint.ConstraintLayout>

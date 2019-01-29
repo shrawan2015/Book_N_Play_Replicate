@@ -19,3 +19,36 @@ object SportsCollection{
         ))
     }
 }
+
+
+class Venue(var venueID:String,val venueName:String,val venueLocation:String , val distance:Int)
+
+object VenueListModel{
+    fun venueList():List<Venue>{
+
+        return ( listOf(
+                Venue("1","venuename1","hinjewadi",12),
+                Venue("1","venuename2","hinjewadi",12),
+                Venue("1","venuename3","hinjewadi",12),
+                Venue("1","venuename4","hinjewadi",12),
+                Venue("1","venuename5","hinjewadi",12),
+                Venue("1","venuename99","hinjewadi",12),
+                Venue("1","venuename88","hinjewadi",12),
+                Venue("1","venuename67","hinjewadi",12),
+                Venue("1","venuename44","hinjewadi",12),
+                Venue("1","venuename34","hinjewadi",12),
+                Venue("1","venuename66","hinjewadi",12),
+                Venue("1","venuename77","hinjewadi",12),
+                Venue("1","venuename87","hinjewadi",12),
+                Venue("1","venuename76","hinjewadi",12),
+                Venue("1","venuename1","hinjewadi",12),
+                Venue("1","venuename23","hinjewadi",12)
+
+        )
+
+
+
+                )
+
+    }
+}

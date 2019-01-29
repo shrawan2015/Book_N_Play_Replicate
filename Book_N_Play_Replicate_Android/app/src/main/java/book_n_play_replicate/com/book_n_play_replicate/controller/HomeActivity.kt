@@ -20,10 +20,6 @@ import android.widget.Button
 import android.transition.Slide
 import android.os.Build
 
-
-
-
-
 class HomeActivity : AppCompatActivity() {
 
     lateinit var selectedPoint:Point
