@@ -7,7 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
+import android.support.v7.widget.GridLayoutManager
 import book_n_play_replicate.com.book_n_play_replicate.R
+import book_n_play_replicate.com.book_n_play_replicate.R.id.sportsCategory
+import kotlinx.android.synthetic.main.activity_home.*
+import model.SportsCollection
 
 class VenueDetailAdapter(val context:Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -18,16 +22,15 @@ class VenueDetailAdapter(val context:Context): RecyclerView.Adapter<RecyclerView
         if (viewType == 0 ){
             val holder = LayoutInflater.from(context).inflate(R.layout.venue_image_cell,parent,false)
             recyclerViewHolder =  VenuImage(holder)
-
-        }else if (viewType == 1){
-            val holder = LayoutInflater.from(context).inflate(R.layout.venue_notes_policy_cell,parent,false)
-            recyclerViewHolder =  VenuDetailHolder2(holder,context)
-        }else if (viewType == 2){
-            val holder = LayoutInflater.from(context).inflate(R.layout.about_us_cell,parent,false)
-            recyclerViewHolder =  VenuDetailHolder2(holder,context)
         }else if (viewType == 3){
+            val holder = LayoutInflater.from(context).inflate(R.layout.venue_notes_policy_cell,parent,false)
+            recyclerViewHolder =  VenuePolicyViewHolder(holder,context)
+        }else if (viewType == 1){
+            val holder = LayoutInflater.from(context).inflate(R.layout.about_us_cell,parent,false)
+            recyclerViewHolder =  AboutUsViewHolder(holder,context)
+        }else if (viewType == 2){
             val holder = LayoutInflater.from(context).inflate(R.layout.amenities_cell,parent,false)
-            recyclerViewHolder =  VenuDetailHolder2(holder,context)
+            recyclerViewHolder =  AmmentiesViewHolder(holder,context)
         }else{
             val holder = LayoutInflater.from(context).inflate(R.layout.venue_cell,parent,false)
             recyclerViewHolder =  VenuDetailHolder2(holder,context)
@@ -47,6 +50,8 @@ class VenueDetailAdapter(val context:Context): RecyclerView.Adapter<RecyclerView
 
        when(holder){
            is VenuImage -> holder.bindObject(context)
+           is AmmentiesViewHolder -> holder.bindObject()
+           is VenuePolicyViewHolder -> holder.bindObject()
        }
     }
 
@@ -81,5 +86,34 @@ class VenueDetailAdapter(val context:Context): RecyclerView.Adapter<RecyclerView
 
     inner class VenuDetailHolder2(itemView: View, val context: Context): RecyclerView.ViewHolder(itemView) {
         fun bindObject(){}
+    }
+
+
+    inner class AboutUsViewHolder(itemView: View, val context: Context): RecyclerView.ViewHolder(itemView) {
+        fun bindObject(){}
+    }
+
+    inner class AmmentiesViewHolder(itemView: View, val context: Context): RecyclerView.ViewHolder(itemView) {
+
+        val recyclerView  = itemView.findViewById<RecyclerView>(R.id.amenties_recycler_view)
+
+        fun bindObject(){
+
+            val sportAdapter = AmenitiesAdapter(context)
+
+            var manager = GridLayoutManager(context,2)
+            recyclerView.layoutManager = manager
+            recyclerView.adapter = sportAdapter
+
+        }
+    }
+
+    inner class VenuePolicyViewHolder(itemView: View, val context: Context): RecyclerView.ViewHolder(itemView) {
+
+
+        fun bindObject(){
+
+
+        }
     }
 }
