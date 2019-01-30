@@ -1,6 +1,7 @@
 package book_n_play_replicate.com.book_n_play_replicate.controller
 
 import adapter.VenuAdapter
+import adapter.VenueDetailAdapter
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.support.v7.app.AppCompatActivity
@@ -17,6 +18,8 @@ class VenueDetail : AppCompatActivity() {
         setContentView(R.layout.activity_venue_detail)
         addToolBar()
         addRecyclerView()
+
+        toolbar.setTitle("Venue Detail")
     }
 
 
@@ -30,9 +33,7 @@ class VenueDetail : AppCompatActivity() {
 
     fun addRecyclerView(){
         val layoutManager = LinearLayoutManager(this)
-        val adapter = VenuAdapter(this, VenueListModel.venueList()){
-            print("this is message")
-        }
+        val adapter = VenueDetailAdapter(this)
         venueRecyclerView.adapter = adapter
         venueRecyclerView.layoutManager = layoutManager
     }
