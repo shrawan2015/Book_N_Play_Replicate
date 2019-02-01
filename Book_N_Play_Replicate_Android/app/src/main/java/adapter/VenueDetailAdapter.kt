@@ -41,7 +41,7 @@ class VenueDetailAdapter(val context:Context): RecyclerView.Adapter<RecyclerView
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return 4
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, p1: Int) {

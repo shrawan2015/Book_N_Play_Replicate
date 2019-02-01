@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".controller.VenueList" />
-        <activity android:name=".controller.VenueDetail"></activity>
+        <activity android:name=".controller.VenueDetail" />
+        <activity android:name=".controller.BookSlot"></activity>
     </application>
 
 </manifest>
